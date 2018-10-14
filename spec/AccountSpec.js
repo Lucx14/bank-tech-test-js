@@ -2,7 +2,8 @@ describe('Account', () => {
   let account;
 
   beforeEach(function() {
-    account = new Account();
+    function mockTransaction() {}
+    account = new Account(mockTransaction);
   });
 
 
@@ -21,6 +22,10 @@ describe('Account', () => {
       expect (() => {
         account.deposit("one hundred pounds")
       }).toThrowError('Error: amount must be a number')
+    });
+    it('adds a transaction object to the cashflows array', () => {
+      account.deposit(1000);
+      expect(account._cashflows.length).toEqual(1);
     });
   });
 
@@ -46,6 +51,11 @@ describe('Account', () => {
       expect (() => {
         account.withdraw(1001)
       }).toThrowError('Error: not enough money in account')
+    });
+    it('adds a transaction object to the cashflows array', () => {
+      account.deposit(1000);
+      account.withdraw(500);
+      expect(account._cashflows.length).toEqual(2);
     });
   });
 
