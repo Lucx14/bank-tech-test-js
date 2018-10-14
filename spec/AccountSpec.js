@@ -17,6 +17,11 @@ describe('Account', () => {
         account.deposit(-10)
       }).toThrowError('Error: amount must be positive')
     });
+    it('only accepts numbers', () => {
+      expect (() => {
+        account.deposit("one hundred pounds")
+      }).toThrowError('Error: amount must be a number')
+    });
   });
 
 
