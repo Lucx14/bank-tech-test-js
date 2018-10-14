@@ -4,14 +4,9 @@ function Account() {
 }
 
 Account.prototype.deposit = function(amount) {
-  if(amount <= 0) {
-    throw new Error("Error: amount must be positive")
-  } else {
-    this._balance += amount;
-  }
-  
+  this._isPositive(amount);
+  this._balance += amount;
 };
-
 
 Account.prototype.withdraw = function(amount) {
   this._balance -= amount;
@@ -23,4 +18,8 @@ Account.prototype.statement = function() {
 
 Account.prototype.currentBalance = function() {
   return this._balance;
+};
+
+Account.prototype._isPositive = function(amount) {
+  if (amount <= 0) throw new Error("Error: amount must be positive");
 };
