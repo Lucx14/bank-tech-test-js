@@ -30,7 +30,22 @@ describe('Account', () => {
       account.deposit(1000);
       account.withdraw(500);
       expect(account.currentBalance()).toEqual(500);
-      
+    });
+    it('only accepts numbers', () => {
+      expect (() => {
+        account.withdraw("one hundred pounds")
+      }).toThrowError('Error: amount must be a number')
+    });
+    it('only accepts positive numbers', () => {
+      expect (() => {
+        account.withdraw(-10)
+      }).toThrowError('Error: amount must be positive')
+    });
+    it('will not allow withdrawals larger than the current balance', () => {
+      account.deposit(1000);
+      expect (() => {
+        account.withdraw(1001)
+      }).toThrowError('Error: not enough money in account')
     });
   });
 

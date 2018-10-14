@@ -10,6 +10,9 @@ Account.prototype.deposit = function(amount) {
 };
 
 Account.prototype.withdraw = function(amount) {
+  this._isNumber(amount);
+  this._isPositive(amount);
+  this._insufficientFunds(amount);
   this._balance -= amount;
 };
 
@@ -21,10 +24,20 @@ Account.prototype.currentBalance = function() {
   return this._balance;
 };
 
+
+
+
+
+
+
 Account.prototype._isPositive = function(amount) {
   if (amount <= 0) throw new Error("Error: amount must be positive");
 };
 
 Account.prototype._isNumber = function(amount) {
   if (isNaN(amount)) throw new Error("Error: amount must be a number");
-}
+};
+
+Account.prototype._insufficientFunds = function(amount) {
+  if (amount > this.currentBalance()) throw new Error("Error: not enough money in account");
+};
