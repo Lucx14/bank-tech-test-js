@@ -12,6 +12,11 @@ describe('Account', () => {
       account.deposit(1000);
       expect(account.currentBalance()).toEqual(1000);
     });
+    it('only accepts positive numbers', () => {
+      expect (() => {
+        account.deposit(-10)
+      }).toThrowError('Error: amount must be positive')
+    });
   });
 
 

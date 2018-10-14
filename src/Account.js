@@ -4,7 +4,12 @@ function Account() {
 }
 
 Account.prototype.deposit = function(amount) {
-  this._balance += amount;
+  if(amount <= 0) {
+    throw new Error("Error: amount must be positive")
+  } else {
+    this._balance += amount;
+  }
+  
 };
 
 
