@@ -6,8 +6,6 @@ describe('Account', () => {
     account = new Account(mockTransaction);
   });
 
-
-
   describe('#deposit', () => {
     it('a user can make a deposit', () => {
       account.deposit(1000);
@@ -28,7 +26,6 @@ describe('Account', () => {
       expect(account._cashflows.length).toEqual(1);
     });
   });
-
 
   describe('#withdraw', () => {
     it('a user can make a withdrawal', () => {
@@ -59,7 +56,6 @@ describe('Account', () => {
     });
   });
 
-
   describe('#statement', () => {
     it('a user can request a printed statement', () => {
       expect(account.statement()).toEqual('statement');
@@ -71,6 +67,4 @@ describe('Account', () => {
       expect(account.currentBalance()).toEqual(0);
     });
   });
-
-
 });

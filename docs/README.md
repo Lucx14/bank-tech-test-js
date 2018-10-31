@@ -1,9 +1,6 @@
 # Bank Tech Test
 
-
-
 A simple program to model a users bank account. The program will allow a user to make deposits, make withdrawals and also print out a bank statement that will display the account history. The task requirements are shown below. Although not mentioned in the task requirements im going to introduce simple common sense edge cases such as not allowing withdrawals from an empty account. The program will be written in Javascript using Jasmine as a testing framework, usage instructions below.
-
 
 ### Requirements
 
@@ -35,13 +32,13 @@ after reading the specifications I picture a single object which I will call 'ac
 # User interaction
 
 Account object instantiates with a zero balance
-account = Account.new
-account.deposit(1000)
-account.balance
-account.deposit(2000)
-account.withdrawal(500)
-account.balance
-account.print_statement
+var account = new Account
+account.deposit(1000);
+account.currentBalance();
+account.deposit(2000);
+account.withdraw(500);
+account.currentBalance();
+account.statement();
 
 
 ### Usage instructions

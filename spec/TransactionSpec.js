@@ -2,7 +2,7 @@ describe('Transaction', () => {
   let transaction;
   let transaction2;
 
-  beforeEach( () => {
+  beforeEach(() => {
     transaction = new Transaction(balance = 500, credit = 1000, debit = null, date = 'today');
     transaction2 = new Transaction(balance = 2500, credit = null, debit = 400, date = 'today');
   });
