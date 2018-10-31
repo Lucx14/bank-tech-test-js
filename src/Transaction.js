@@ -1,5 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
-function Transaction(balance, credit, debit, date = new Date()) {
+function Transaction(balance, credit, debit, date = new Date().toLocaleDateString()) {
   this._date = date;
   this._credit = credit;
   this._debit = debit;

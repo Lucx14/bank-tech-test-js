@@ -10,7 +10,7 @@ Account.prototype.deposit = function deposit(amount) {
   this._isPositive(amount);
   this._balance += amount;
 
-  this._cashflows.push(new this.transaction(this._balance, amount, null))
+  this._cashflows.push(new this.transaction(this._balance, amount, null));
 };
 
 Account.prototype.withdraw = function withdraw(amount) {
@@ -19,7 +19,7 @@ Account.prototype.withdraw = function withdraw(amount) {
   this._insufficientFunds(amount);
   this._balance -= amount;
 
-  this._cashflows.push(new this.transaction(this._balance, null, amount))
+  this._cashflows.push(new this.transaction(this._balance, null, amount));
 };
 
 Account.prototype.statement = function statement() {
