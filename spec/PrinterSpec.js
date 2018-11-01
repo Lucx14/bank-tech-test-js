@@ -19,7 +19,7 @@ describe('Printer', () => {
         _date: date, _credit: null, _debit: 500, _balance: 2500,
       };
       const cashflows = [transaction1, transaction2, transaction3];
-      expect(printer.printStatement(cashflows)).toEqual('date || credit || debit || balance\n01/11/2018 || 1000 || null || 1000\n01/11/2018 || 2000 || null || 3000\n01/11/2018 || null || 500 || 2500');
+      expect(printer.printStatement(cashflows)).toEqual('date || credit || debit || balance\n01/11/2018 || null || 500 || 2500\n01/11/2018 || 2000 || null || 3000\n01/11/2018 || 1000 || null || 1000');
     });
   });
 });
