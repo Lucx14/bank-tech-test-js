@@ -8,7 +8,7 @@ describe('Printer', () => {
 
   describe('#printStatement', () => {
     it('can print a formatted statement', () => {
-      const date = new Date().toLocaleDateString();
+      const date = '01/11/2018';
       const transaction1 = {
         _date: date, _credit: 1000, _debit: null, _balance: 1000,
       };
