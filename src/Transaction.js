@@ -11,11 +11,13 @@ Transaction.prototype.getDate = function getDate() {
 };
 
 Transaction.prototype.getCredit = function getCredit() {
-  return this._credit;
+  return (this._credit === null) ? ' ' : this._credit;
+  // return this._credit;
 };
 
 Transaction.prototype.getDebit = function getDebit() {
-  return this._debit;
+  // return this._debit;
+  return (this._debit === null) ? ' ' : this._debit;
 };
 
 Transaction.prototype.getBalance = function getBalance() {

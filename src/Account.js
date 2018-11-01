@@ -1,8 +1,9 @@
 /* eslint no-underscore-dangle: 0 */
-function Account(transaction = Transaction) {
+function Account(transaction = Transaction, printer = new Printer) {
   this._balance = 0;
   this._cashflows = [];
   this.transaction = transaction;
+  this.printer = printer;
 }
 
 Account.prototype.deposit = function deposit(amount) {
@@ -23,7 +24,7 @@ Account.prototype.withdraw = function withdraw(amount) {
 };
 
 Account.prototype.statement = function statement() {
-  return 'statement';
+  return this.printer.printStatement(this._cashflows);
 };
 
 Account.prototype.currentBalance = function currentBalance() {

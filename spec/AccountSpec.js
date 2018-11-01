@@ -3,7 +3,9 @@ describe('Account', () => {
 
   beforeEach(function() {
     function mockTransaction() {}
-    account = new Account(mockTransaction);
+    function mockPrinter() {}
+    account = new Account(mockTransaction, mockPrinter);
+    spyOn(account, 'statement').and.returnValue('printed statement');
   });
 
   describe('#deposit', () => {
@@ -58,7 +60,7 @@ describe('Account', () => {
 
   describe('#statement', () => {
     it('a user can request a printed statement', () => {
-      expect(account.statement()).toEqual('statement');
+      expect(account.statement()).toBeDefined();
     });
   });
 

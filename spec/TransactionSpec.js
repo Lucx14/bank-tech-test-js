@@ -17,13 +17,13 @@ describe('Transaction', () => {
   describe('#credit', () => {
     it('can read the credit attribute', () => {
       expect(transaction.getCredit()).toEqual(1000);
-      expect(transaction2.getCredit()).toEqual(null);
+      expect(transaction2.getCredit()).toEqual(' ');
     });
   });
 
   describe('#debit', () => {
     it('can read the debit attribute', () => {
-      expect(transaction.getDebit()).toEqual(null);
+      expect(transaction.getDebit()).toEqual(' ');
       expect(transaction2.getDebit()).toEqual(400);
     });
   });
