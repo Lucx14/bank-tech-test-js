@@ -1,6 +1,6 @@
 # Bank Tech Test
 
-A simple program to model a users bank account. The program will allow a user to make deposits, make withdrawals and also print out a bank statement that will display the account history. The task requirements are shown below. Although not mentioned in the task requirements im going to introduce simple common sense edge cases such as not allowing withdrawals from an empty account. The program will be written in Javascript using Jasmine as a testing framework, usage instructions below.
+A simple program to model a users bank account. The program will allow a user to make deposits, make withdrawals and also print out a bank statement that will display the account history. The task requirements are shown below. Although not mentioned in the task requirements im going to introduce simple common sense edge cases such as not allowing withdrawals from an empty account. The program will be written in Javascript using Jasmine as a testing framework and eslint to keep the code well formatted, usage instructions below.
 
 ### Requirements
 
@@ -27,46 +27,27 @@ date || credit || debit || balance
 
 ### Approach
 
-after reading the specifications I picture a single object which I will call 'account'. My initial thoughts are to take the acceptance criteria and translate them into a basic set of feature tests that i would set up and run in the Javascript console. So my user interaction/feature tests in the console would look something like the below.
+My goal in this task was to try to use good object design and write well tested code. I have gone with having a main account class and using dependency injection ive given the account class access to 2 other classes, one for the creation of a transaction object and another for a printing formatter.
 
 # User interaction
-
+```
 Account object instantiates with a zero balance
-var account = new Account
+const account = new Account
 account.deposit(1000);
 account.currentBalance();
 account.deposit(2000);
 account.withdraw(500);
 account.currentBalance();
 account.statement();
-
+```
 
 ### Usage instructions
 
-Clone the project and then cd into it
-
-
+Clone the project and then cd into it, once open in the browser, open up dev tools and in the console you will be able to interact with the program as per instructions above.
 
 ```
-
-
-
-```
-
-
-
-
-```
-
-
-
-
-```
-
-
-Project file structure
-
-```
-
-
+$ git clone https://github.com/Lucx14/bank-tech-test-js.git
+$ cd bank-tech-test-js
+$ npm install
+$ open -a "Google Chrome" SpecRunner.html
 ```
